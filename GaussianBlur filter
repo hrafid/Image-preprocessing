@@ -1,0 +1,8 @@
+from PIL import Image, ImageFilter
+ 
+image = Image.open(r"dir")
+
+# GaussianBlur 
+image = image.filter(ImageFilter.GaussianBlur)
+
+image.show()
