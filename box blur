@@ -1,0 +1,4 @@
+from PIL import Image, ImageFilter
+fname = "dir"
+img = Image.open(fname)
+image = img.filter(ImageFilter.BoxBlur(5)).show()
