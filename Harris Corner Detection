@@ -1,0 +1,11 @@
+import cv2
+import numpy as np
+
+image = cv2.imread('path')
+operatedImage = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+operatedImage = np.float32(operatedImage)
+H = cv2.cornerHarris(operatedImage, 2, 5, 0.07)
+H = cv2.dilate(H, None)
+image[H > 0.01 * H.max()]=[0, 0, 255]
+cv2.imshow('Output', image)
+  
