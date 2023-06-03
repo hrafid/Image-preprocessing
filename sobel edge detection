@@ -1,0 +1,9 @@
+import cv2
+import numpy as np
+img = #read image
+hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+sobelx = cv2.Sobel(img,cv2.CV_64F,1,0,ksize=5)
+sobely = cv2.Sobel(img,cv2.CV_64F,0,1,ksize=5)
+laplacian = cv2.Laplacian(img,cv2.CV_64F)
+      
+  
