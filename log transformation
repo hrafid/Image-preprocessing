@@ -1,0 +1,11 @@
+import cv2
+import numpy as np
+ 
+img = cv2.imread('im.jpg')
+  
+# Apply log transform.
+t = 255/(np.log(1 + np.max(img)))
+transformed = t * np.log(1 + img)
+transformed = np.array(log_transformed, dtype = np.uint8)
+
+cv2.imwrite('transformed.jpg', log_transformed)
