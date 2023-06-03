@@ -1,0 +1,4 @@
+from PIL import Image, ImageFilter
+fname = "path"
+img = Image.open(fname) 
+sharp_img = img.filter(ImageFilter.SHARPEN)
