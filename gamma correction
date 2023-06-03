@@ -1,0 +1,12 @@
+
+
+read_img_dir =   #input image directory
+
+read_img = cv2.imread(read_img_dir)
+
+g = cv2.cvtColor(read_img, cv2.COLOR_BGR2GRAY)  #GRAYSCALE format
+
+gamma = np.array(255*(g / 255) ** 2.0, dtype = 'uint8')  # applying gamma correction using value = 2
+
+    
+cv2.imwrite #output image directory
