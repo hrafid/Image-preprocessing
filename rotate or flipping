@@ -1,0 +1,13 @@
+from PIL import Image
+img = "dir"
+
+flip_img = img.transpose(Image.FLIP_TOP_BOTTOM)
+rotated_img = img.rotate(45, expand=True)
+
+#other arguments
+#Image.FLIP_LEFT_RIGHT
+#Image.FLIP_TOP_BOTTOM
+#Image.ROTATE_90
+#Image.ROTATE_270
+#Image.TRANSPOSE
+#Image.TRANSVERSE
