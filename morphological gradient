@@ -1,0 +1,5 @@
+kernel = np.ones((5,5),np.uint8)
+
+image = cv2.imread(path,0) 
+    
+output = cv2.morphologyEx(image, cv2.MORPH_GRADIENT, kernel)
