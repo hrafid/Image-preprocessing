@@ -1,0 +1,61 @@
+from PIL import Image
+
+def normaRed(intensity):
+
+    iI      = intensity   
+
+    minI    = 86
+
+    maxI    = 230 
+
+    minO    = 0
+
+    maxO    = 255
+ 
+
+    iO      = (iI-minI)*(((maxO-minO)/(maxI-minI))+minO)
+
+    return iO
+
+def normGreen(intensity):
+
+    iI      = intensity
+    minI    = 90
+
+    maxI    = 225
+
+    minO    = 0
+
+    maxO    = 255 
+
+    iO      = (iI-minI)*(((maxO-minO)/(maxI-minI))+minO)
+
+    return iO
+
+def norm(intensity):
+
+    iI      = intensity
+
+    minI    = 100
+
+    maxI    = 210 
+
+    minO    = 0
+
+    maxO    = 255
+
+    iO      = (iI-minI)*(((maxO-minO)/(maxI-minI))+minO)
+
+    return iO
+
+imageObject     = Image.open("./glare4.jpg")
+
+multiBands      = imageObject.split()
+
+normalizedRedBand      = multiBands[0].point(normRed)
+
+normalizedGreenBand    = multiBands[1].point(normGreen)
+
+normalizedBlueBand     = multiBands[2].point(normBlue)
+
+normalizedImage = Image.merge("RGB", (normalizedRedBand, normalizedGreenBand, normalizedBlueBand))
